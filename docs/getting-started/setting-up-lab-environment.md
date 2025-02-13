@@ -148,6 +148,11 @@ Before you create the AKS cluster, run the following command to install the aks-
 ```bash
 az extension add --name aks-preview
 ```
+ssh-access disabled is a preview feature and will need to be registered.  To use the Disable SSH feature, [perform the following steps]https://learn.microsoft.com/en-us/azure/aks/manage-ssh-node-access?tabs=node-shell#register-the-disablesshpreview-feature-flag to register and enable it in your subscription.
+
+```bash
+az feature register --namespace "Microsoft.ContainerService" --name "DisableSSHPreview"
+```
 
 Run the following command to set a name for the AKS cluster, save it to the **.env** file, and reload the environment variables.
 
